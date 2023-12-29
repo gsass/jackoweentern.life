@@ -36,8 +36,10 @@ hints.forEach((hint, i) => {
  * Display grafs
  */
 const grafs = [
-    "par1",
-    "par2",
+    `Dearest Jackoweentern (Bernice),\n\n
+    Happy hoeliday`,
+    `When u requested that you receive no physical gifts, I laughed once or twice. 
+    But later on, when I became your santo, I cried a hundred tears`,
 ];
 var grafIndex = 0;
 
@@ -61,7 +63,7 @@ addEventListener("keydown", (e) => {
          * Display next graf while available
          */
         const nextGraf = document.createElement("p");
-        nextGraf.innerHTML += grafs[grafIndex];
+        nextGraf.innerText = grafs[grafIndex];
         grafIndex += 1;
         if (grafIndex < grafs.length) {
             const ellipsis = document.createElement("span");
