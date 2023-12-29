@@ -1,4 +1,12 @@
 /**
+ * Phone check
+ */
+const isPhone = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+if (isPhone) {
+    document.getElementById("spaceHint").innerHTML = "To Use A Computer.";
+}
+
+/**
  * Enable animation
  */
 var animationIntervals = [];
@@ -15,8 +23,10 @@ const addAnimatedEllipsis = (el) => {
     return setInterval(renderEllipsis, 320);
 }
 
-for (el of document.getElementsByClassName("dotty")) {
-    animationIntervals.push(addAnimatedEllipsis(el));
+if (!isPhone) {
+    for (el of document.getElementsByClassName("dotty")) {
+        animationIntervals.push(addAnimatedEllipsis(el));
+    }
 }
 
 /**
@@ -25,12 +35,14 @@ for (el of document.getElementsByClassName("dotty")) {
 
 const hints = ["[Space]", "[SpaceBar]"];
 
-hints.forEach((hint, i) => {
-    setTimeout(
-        () => document.getElementById("spaceHint").innerHTML = hint,
-        15000 * (i+1)
-    )
-});
+if (!isPhone) {
+    hints.forEach((hint, i) => {
+        setTimeout(
+            () => document.getElementById("spaceHint").innerHTML = hint,
+            15000 * (i+1)
+        )
+    });
+}
 
 /**
  * Display grafs
@@ -44,7 +56,7 @@ const grafs = [
     `I tried to write a haunting and mysterious song for you, but I ended up with a loop \
     that kinda sucked, and less respect for Abletone. Then I tried to write a poem you would \
     enjoy, but they all came out as either conveyor buffets of human anatomy, or existential \
-    laments which even I couldn't interpret post-facto`,
+    laments which even I found unreadable`,
     `Eventually I realized that I could make you a cool puzzle adventeur`,
     `Then I realized it would suck to have to do a long puzzle adventoro on video, \
     in front of people. So I made it a shorter and less cool adventurd`,
