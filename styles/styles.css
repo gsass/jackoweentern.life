@@ -20,6 +20,10 @@ body {
     overflow: scroll;
 }
 
+#app {
+    padding: 0 3vw;
+}
+
 h1 {
    width: 100%;
    margin: 1em 0 1em 10%;
