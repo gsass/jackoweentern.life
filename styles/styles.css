@@ -17,11 +17,14 @@ body {
 }
 
 h1 {
+   font-family: Spectral;
    width: 100%;
    margin: 1em 0 1em 10%;
 }
 
 p {
+    font-family: Sacramento;
+    font-size: 2em;
     animation: fadeIn 3s;
 }
 
@@ -35,10 +38,6 @@ p {
 
 .lighten {
     color: #aaa;
-}
-
-.darken {
-    color: #2faded;
 }
 
 @keyframes fadeIn {
