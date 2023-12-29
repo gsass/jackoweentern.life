@@ -12,7 +12,7 @@ const addAnimatedEllipsis = (el) => {
         el.innerHTML = inner;
         counter = (counter + 1) % 3;
     }
-    return setInterval(renderEllipsis, 250);
+    return setInterval(renderEllipsis, 320);
 }
 
 for (el of document.getElementsByClassName("dotty")) {
@@ -28,7 +28,7 @@ const hints = ["[Space]", "[SpaceBar]"];
 hints.forEach((hint, i) => {
     setTimeout(
         () => document.getElementById("spaceHint").innerHTML = hint,
-        5000 * (i+1)
+        15000 * (i+1)
     )
 });
 

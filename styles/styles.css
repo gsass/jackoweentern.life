@@ -12,6 +12,19 @@ body {
     background-color: #dabdad;
 }
 
+#app {
+    padding: 0 3vw;
+}
+
+h1 {
+   width: 100%;
+   margin: 1em 0 1em 10%;
+}
+
+p {
+    animation: fadeIn 3s;
+}
+
 .container {
     width: 50%;
     height: 100%;
@@ -20,11 +33,35 @@ body {
     overflow: scroll;
 }
 
-#app {
-    padding: 0 3vw;
+.lighten {
+    color: #aaa;
 }
 
-h1 {
-   width: 100%;
-   margin: 1em 0 1em 10%;
+.darken {
+    color: #2faded;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
