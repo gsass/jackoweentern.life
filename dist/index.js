@@ -51,24 +51,26 @@ addEventListener("keydown", (e) => {
         /*
          * Stop animating current ellipses
          */
+        animationIntervals.forEach(clearTimeout);
+        animationIntervals = [];
         for (el of document.getElementsByClassName("dotty")) {
             el.innerHTML = ".";
         }
-        animationIntervals.forEach(clearTimeout);
-        animationIntervals = [];
 
         /*
          * Display next graf while available
          */
         const nextGraf = document.createElement("p");
         nextGraf.innerHTML += grafs[grafIndex];
-        document.getElementById("app").append(nextGraf)
         grafIndex += 1;
         if (grafIndex < grafs.length) {
             const ellipsis = document.createElement("span");
             ellipsis.classList.add("dotty");
-            addAnimatedEllipsis(ellipsis);
-            nextGraf.append(ellipsis);
+            animationIntervals.push(addAnimatedEllipsis(ellipsis));
+            nextGraf.appendChild(ellipsis);
+        } else {
+            nextGraf.innerHTML += ".";
         }
+        document.getElementById("app").append(nextGraf);
     }
 });
