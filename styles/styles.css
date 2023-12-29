@@ -34,7 +34,8 @@ p {
     height: 100%;
     margin: 0 auto;
     background: white;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .lighten {
